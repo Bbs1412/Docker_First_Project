@@ -1,0 +1,58 @@
+<!-- Index template to fill from FastAPI server -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Docker Test Project</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="icon" href="/assets/docker.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="main-container">
+        <header>
+            <div id="head">
+                <img src="/assets/profile_2.png" alt="profile image" width="100" height="100">
+                <h1>Welcome to User Dashboard</h1>
+            </div>
+        </header>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Date of Birth</th>
+                    <!-- <th>Created At</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.dob }}</td>
+                    <!-- <td>{{ user.created_at }}</td> -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-left">
+            <p>© 2025 Bhushan Songire</p>
+            <span>|</span>
+            <p>Powered by FastAPI and Docker</p>
+        </div>
+        <div class="footer-right">
+            <p><strong>Environment</strong> : <code>{{ env_type }}</code></p>
+        </div>
+    </footer>
+</body>
+
+</html>
