@@ -54,6 +54,10 @@ def get_users() -> List[dict[str, dict[str, str]]]:
 
 
 if __name__ == "__main__":
+    # Create database:
+    import database
+    # this is sufficient, since whole code is direct on first indent and not in a function
+
     import uvicorn
     os.makedirs("assets", exist_ok=True)
     uvicorn.run(app, host="0.0.0.0", port=7575)
